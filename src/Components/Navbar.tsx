@@ -4,8 +4,8 @@ import { GoThreeBars } from "react-icons/go";
 const Navbar = () => {
   return (
     <>
-      <div className="flex items-center w-full space-x-5 h-[80px] bg-[#ffffff]">
-        <GoThreeBars className="w-10 h-10 ml-8 text-[#1F9CEE]" />
+      <div className="flex items-center w-full space-x-5 h-[70px] bg-[#ffffff]">
+        <GoThreeBars className="w-10 h-10 ml-4 text-[#1F9CEE]" />
         <div className="flex items-center  ">
           <img
             src="smlogo.png"
