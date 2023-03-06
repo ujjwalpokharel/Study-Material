@@ -19,7 +19,7 @@ const Navbar = () => {
           />
         </div>
         {navpop ? (
-          <div className="w-[200px] h-screen z-10 absolute top-0 bg-white">
+          <div className="w-[230px] h-screen z-10 absolute top-0 bg-white">
             <ul>
               <li>home</li>
               <li>about</li>
