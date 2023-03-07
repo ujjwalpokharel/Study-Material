@@ -41,7 +41,11 @@ const Navbar = () => {
   //nav pop state
   const [navpop, setNavpop] = useState(false);
   // subheading drow down
+  const [ids, setIds] = useState(-1);
   const [sylpop, setSylpop] = useState(false);
+  const [qmpop, setQmpop] = useState(false);
+  const [nopop, setNopop] = useState(false);
+
   return (
     <>
       {/* nav bar horizontal */}
@@ -77,22 +81,35 @@ const Navbar = () => {
             />
           </div>
           <section className="flex flex-col  ">
-            {Navdata.map((value) => (
+            {Navdata.map((value, id) => (
               <>
-                <div className="font-bold flex items-center justify-between text-lg  text-[#1F9CEE] p-5">
+                <div
+                  key={id}
+                  className="font-bold flex items-center justify-between text-lg  text-[#1F9CEE] p-5"
+                >
                   {value.heading}
                   {value.subheading ? (
                     <RiArrowDropDownLine
                       className="w-9 h-9"
-                      onClick={() => setSylpop(!sylpop)}
+                      onClick={() => {
+                        setSylpop(true), setIds(id);
+                      }}
                     />
                   ) : null}
                 </div>
                 <div className="h-px w-[240px] ml-5 bg-gray-200" />
-                {value.subheading && sylpop ? (
+                {sylpop && ids == id ? (
                   <div className="flex flex-col">
-                    {value.subheading.map((subvalue) => (
-                      <div className="p-5">{subvalue}</div>
+                    {value.subheading?.map((subvalue) => (
+                      <>
+                        <div
+                          key={id}
+                          className="p-5 ml-5 font-medium text-lg text-[#1F9CEE]"
+                        >
+                          {subvalue}
+                        </div>
+                        <div className="h-px w-[230px] ml-10 bg-gray-200" />
+                      </>
                     ))}
                   </div>
                 ) : null}
