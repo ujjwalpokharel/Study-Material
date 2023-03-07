@@ -97,7 +97,7 @@ const Navbar = () => {
                   {value.subheading && sylpop ? (
                     <div className="flex flex-col">
                       {value.subheading.map((subvalue) => (
-                        <div>{subvalue}</div>
+                        <div className="p-5">{subvalue}</div>
                       ))}
                     </div>
                   ) : null}
