@@ -4,7 +4,8 @@ import { ImCross } from "react-icons/im";
 import { RiArrowDropDownLine } from "react-icons/ri";
 import { NavLink } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
-
+import SubHeading from "./SubHeading";
+import useStoreData from "../store/Store";
 const Navbar = () => {
   // nav data
   const Navdata = [
@@ -44,18 +45,16 @@ const Navbar = () => {
   ];
 
   //nav pop state
-  const [navpop, setNavpop] = useState(false);
-  // subheading drow down
-  const [ids, setIds] = useState(-1);
-  const [sylpop, setSylpop] = useState(false);
-  const [qmpop, setQmpop] = useState(false);
-  const [nopop, setNopop] = useState(false);
+  // const [navpop, setNavpop] = useState(false);
+  const navpop = useStoreData((state) => state.navigationpop);
+  const setNavpop = useStoreData((state) => state.setNavigationpop);
+
   const navigate = useNavigate();
 
   return (
     <>
       {/* nav bar horizontal */}
-      <section className="flex  items-center w-full space-x-5 h-[5rem] bg-[#ffffff]">
+      <section className="flex shadow-sm shadow-gray-400  items-center w-full space-x-5 h-[5rem] bg-[#ffffff]">
         <GoThreeBars
           className="w-10 h-10 ml-4 text-[#1F9CEE] "
           onClick={() => setNavpop(true)}
@@ -86,10 +85,10 @@ const Navbar = () => {
               }}
             />
           </div>
-          <section className="flex flex-col  ">
+          <section className="flex  flex-col  ">
             {Navdata.map((value, id) => (
               <>
-                <div
+                {/* <div
                   onClick={() => {
                     {
                       value.subheading
@@ -97,22 +96,22 @@ const Navbar = () => {
                         : (navigate(`${value.link}`), setNavpop(false));
                     }
                   }}
-                  key={id}
-                  className="font-bold flex items-center justify-between text-lg  text-[#1F9CEE] p-5"
+                  className="font-bold relative flex items-center justify-between text-lg  text-[#1F9CEE] p-5"
                 >
-                  {value.heading}
+                  {value.heading} */}
 
-                  {value.subheading ? (
+                {/* {value.subheading ? (
                     <RiArrowDropDownLine
                       className="w-9 h-9"
                       onClick={() => {
-                        setSylpop(!sylpop), setIds(id);
+                        setSylpop(!sylpop);
                       }}
                     />
-                  ) : null}
-                </div>
-                <div className="h-px w-[240px] ml-5 bg-gray-200" />
-                {ids == id && sylpop ? (
+                  ) : null} */}
+                {/* </div> */}
+                <SubHeading value={value} />
+
+                {/* {ids == id && sylpop ? (
                   <div className="flex flex-col">
                     {value.subheading?.map((subvalue) => (
                       <>
@@ -126,7 +125,7 @@ const Navbar = () => {
                       </>
                     ))}
                   </div>
-                ) : null}
+                ) : null} */}
               </>
             ))}
           </section>
