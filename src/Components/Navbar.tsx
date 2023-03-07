@@ -12,6 +12,7 @@ const Navbar = () => {
     { heading: "News", link: "/news" },
     {
       heading: "Syllabus",
+
       subheading: [
         "BBS first year",
         "BBS second year",
@@ -21,6 +22,7 @@ const Navbar = () => {
     },
     {
       heading: "Question Model",
+
       subheading: [
         "BBS first year",
         "BBS second year",
@@ -30,6 +32,7 @@ const Navbar = () => {
     },
     {
       heading: "Notes",
+
       subheading: [
         "BBS first year",
         "BBS second year",
@@ -88,7 +91,11 @@ const Navbar = () => {
               <>
                 <div
                   onClick={() => {
-                    navigate(`${value.link}`), setNavpop(false);
+                    {
+                      value.subheading
+                        ? null
+                        : (navigate(`${value.link}`), setNavpop(false));
+                    }
                   }}
                   key={id}
                   className="font-bold flex items-center justify-between text-lg  text-[#1F9CEE] p-5"
