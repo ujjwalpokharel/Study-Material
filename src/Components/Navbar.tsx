@@ -3,13 +3,49 @@ import { GoThreeBars } from "react-icons/go";
 import { ImCross } from "react-icons/im";
 
 const Navbar = () => {
+  // nav data
+  const Navdata = [
+    { heading: "Home" },
+    { heading: "News" },
+    {
+      heading: "Syllabus",
+      subheading: [
+        "BBS first year",
+        "BBS second year",
+        "BBS third year",
+        "BBS fourth year",
+      ],
+    },
+    {
+      heading: "Question Model",
+      subheading: [
+        "BBS first year",
+        "BBS second year",
+        "BBS third year",
+        "BBS fourth year",
+      ],
+    },
+    {
+      heading: "Note",
+      subheading: [
+        "BBS first year",
+        "BBS second year",
+        "BBS third year",
+        "BBS fourth year",
+      ],
+    },
+    { heading: "About Us" },
+  ];
+
+  //nav pop state
   const [navpop, setNavpop] = useState(false);
   return (
     <>
-      <div className="relative ">
+      <div className="relative  ">
+        {/* nav bar horizontal */}
         <div className="flex  items-center w-full space-x-5 h-[5rem] bg-[#ffffff]">
           <GoThreeBars
-            className="w-10 h-10 ml-4 text-[#1F9CEE]"
+            className="w-10 h-10 ml-4 text-[#1F9CEE] "
             onClick={() => setNavpop(true)}
           />
 
@@ -19,8 +55,10 @@ const Navbar = () => {
             className="w-56 h-56 object-contain"
           />
         </div>
+        {/* nav bar vertical */}
         {navpop ? (
-          <div className="w-[272px] h-screen z-10 absolute top-0 bg-white shadow-sm shadow-gray-500 ">
+          <div className="w-[272px] h-screen z-50 absolute top-0 bg-white shadow-sm shadow-gray-400 ">
+            {/* logo */}
             <div className="items-center flex justify-center">
               <img
                 src="smlogo.png"
@@ -28,7 +66,7 @@ const Navbar = () => {
                 className="  w-56 h-40 object-contain"
               />
             </div>
-
+            {/* cross logo to toggle navbar */}
             <div
               className="absolute right-0
             top-0 w-7 h-7 p-[0.4rem] bg-[#1F9CEE]"
@@ -40,6 +78,19 @@ const Navbar = () => {
                 }}
               />
             </div>
+            <section className="flex flex-col ">
+              {Navdata.map((value) => (
+                <>
+                  <div className="font-bold  text-lg items-center text-[#1F9CEE] p-5">
+                    {value.heading}
+                  </div>
+                  <div className="h-px w-[200px] bg-gray-300" />
+                  {/* {value.subheading ? (
+                    <div className="flex flex-col">{value.subheading}</div>
+                  ) : null} */}
+                </>
+              ))}
+            </section>
           </div>
         ) : null}
       </div>
