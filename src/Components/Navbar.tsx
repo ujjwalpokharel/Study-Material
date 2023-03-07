@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { GoThreeBars } from "react-icons/go";
 import { ImCross } from "react-icons/im";
+import { RiArrowDropDownLine } from "react-icons/ri";
 
 const Navbar = () => {
   // nav data
@@ -26,7 +27,7 @@ const Navbar = () => {
       ],
     },
     {
-      heading: "Note",
+      heading: "Notes",
       subheading: [
         "BBS first year",
         "BBS second year",
@@ -81,10 +82,13 @@ const Navbar = () => {
             <section className="flex flex-col ">
               {Navdata.map((value) => (
                 <>
-                  <div className="font-bold  text-lg items-center text-[#1F9CEE] p-5">
+                  <div className="font-bold flex items-center justify-between text-lg  text-[#1F9CEE] p-5">
                     {value.heading}
+                    {value.subheading ? (
+                      <RiArrowDropDownLine className="w-9 h-9" />
+                    ) : null}
                   </div>
-                  <div className="h-px w-[200px] bg-gray-300" />
+                  <div className="h-px w-[240px] ml-5 bg-gray-200" />
                   {/* {value.subheading ? (
                     <div className="flex flex-col">{value.subheading}</div>
                   ) : null} */}
