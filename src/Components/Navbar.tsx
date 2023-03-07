@@ -60,7 +60,7 @@ const Navbar = () => {
         </div>
         {/* nav bar vertical */}
         {navpop ? (
-          <div className="w-[272px] h-screen z-50 absolute top-0 bg-white shadow-sm shadow-gray-400 ">
+          <div className="w-[272px] max-h-screen z-50 absolute top-0 bg-white shadow-sm shadow-gray-400 ">
             {/* logo */}
             <div className="items-center flex justify-center">
               <img
