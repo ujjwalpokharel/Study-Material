@@ -40,6 +40,8 @@ const Navbar = () => {
 
   //nav pop state
   const [navpop, setNavpop] = useState(false);
+  // subheading drow down
+  const [sylpop, setSylpop] = useState(false);
   return (
     <>
       <div className="relative  ">
@@ -85,13 +87,20 @@ const Navbar = () => {
                   <div className="font-bold flex items-center justify-between text-lg  text-[#1F9CEE] p-5">
                     {value.heading}
                     {value.subheading ? (
-                      <RiArrowDropDownLine className="w-9 h-9" />
+                      <RiArrowDropDownLine
+                        className="w-9 h-9"
+                        onClick={() => setSylpop(!sylpop)}
+                      />
                     ) : null}
                   </div>
                   <div className="h-px w-[240px] ml-5 bg-gray-200" />
-                  {/* {value.subheading ? (
-                    <div className="flex flex-col">{value.subheading}</div>
-                  ) : null} */}
+                  {value.subheading && sylpop ? (
+                    <div className="flex flex-col">
+                      {value.subheading.map((subvalue) => (
+                        <div>{subvalue}</div>
+                      ))}
+                    </div>
+                  ) : null}
                 </>
               ))}
             </section>
