@@ -20,7 +20,7 @@ const Navbar = () => {
           />
         </div>
         {navpop ? (
-          <div className="w-[272px] h-screen z-10 absolute top-0 bg-white">
+          <div className="w-[272px] h-screen z-10 absolute top-0 bg-white shadow-sm shadow-gray-500 ">
             <div className="items-center flex justify-center">
               <img
                 src="smlogo.png"
