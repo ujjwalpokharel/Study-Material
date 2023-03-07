@@ -2,12 +2,13 @@ import React, { useState } from "react";
 import { GoThreeBars } from "react-icons/go";
 import { ImCross } from "react-icons/im";
 import { RiArrowDropDownLine } from "react-icons/ri";
+import { NavLink } from "react-router-dom";
 
 const Navbar = () => {
   // nav data
   const Navdata = [
-    { heading: "Home" },
-    { heading: "News" },
+    { heading: "Home", link: "/" },
+    { heading: "News", link: "/news" },
     {
       heading: "Syllabus",
       subheading: [
@@ -35,7 +36,7 @@ const Navbar = () => {
         "BBS fourth year",
       ],
     },
-    { heading: "About Us" },
+    { heading: "About Us", link: "/aboutus" },
   ];
 
   //nav pop state
@@ -87,18 +88,24 @@ const Navbar = () => {
                   key={id}
                   className="font-bold flex items-center justify-between text-lg  text-[#1F9CEE] p-5"
                 >
-                  {value.heading}
+                  <NavLink
+                    to={`${value.link}`}
+                    onClick={() => setNavpop(false)}
+                  >
+                    {" "}
+                    {value.heading}
+                  </NavLink>
                   {value.subheading ? (
                     <RiArrowDropDownLine
                       className="w-9 h-9"
                       onClick={() => {
-                        setSylpop(true), setIds(id);
+                        setSylpop(!sylpop), setIds(id);
                       }}
                     />
                   ) : null}
                 </div>
                 <div className="h-px w-[240px] ml-5 bg-gray-200" />
-                {sylpop && ids == id ? (
+                {ids == id && sylpop ? (
                   <div className="flex flex-col">
                     {value.subheading?.map((subvalue) => (
                       <>
