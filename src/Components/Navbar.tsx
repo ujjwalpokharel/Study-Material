@@ -3,6 +3,7 @@ import { GoThreeBars } from "react-icons/go";
 import { ImCross } from "react-icons/im";
 import { RiArrowDropDownLine } from "react-icons/ri";
 import { NavLink } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const Navbar = () => {
   // nav data
@@ -46,6 +47,7 @@ const Navbar = () => {
   const [sylpop, setSylpop] = useState(false);
   const [qmpop, setQmpop] = useState(false);
   const [nopop, setNopop] = useState(false);
+  const navigate = useNavigate();
 
   return (
     <>
@@ -85,16 +87,14 @@ const Navbar = () => {
             {Navdata.map((value, id) => (
               <>
                 <div
+                  onClick={() => {
+                    navigate(`${value.link}`), setNavpop(false);
+                  }}
                   key={id}
                   className="font-bold flex items-center justify-between text-lg  text-[#1F9CEE] p-5"
                 >
-                  <NavLink
-                    to={`${value.link}`}
-                    onClick={() => setNavpop(false)}
-                  >
-                    {" "}
-                    {value.heading}
-                  </NavLink>
+                  {value.heading}
+
                   {value.subheading ? (
                     <RiArrowDropDownLine
                       className="w-9 h-9"
