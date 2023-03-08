@@ -1,6 +1,7 @@
 import React from "react";
 import aboutustemplate from "../assets/AboutTemplatenew.png";
 import smyoutube from "../assets/smyoutube.jpg";
+import Footer from "./Footer";
 
 const AboutUs = () => {
   return (
@@ -45,6 +46,7 @@ const AboutUs = () => {
           stay informed and stay ahead.
         </p>
       </section>
+      <Footer />
     </div>
   );
 };
