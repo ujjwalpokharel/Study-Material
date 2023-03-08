@@ -1,43 +1,16 @@
 import React, { useState } from "react";
 import { GoThreeBars } from "react-icons/go";
 import { ImCross } from "react-icons/im";
-import { RiArrowDropDownLine } from "react-icons/ri";
-import { NavLink } from "react-router-dom";
+import { storedata } from "../store/Store";
 import { useNavigate } from "react-router-dom";
 import SubHeading from "./SubHeading";
 import useStoreData from "../store/Store";
 import smlogo from "../assets/smlogo.png";
 import smbanner from "../assets/smbanner.png";
+import { Navdata, navfull } from "../Data/Navdata";
 const Navbar = () => {
-  // nav data
-  const Navdata = [
-    { heading: "Home", link: "/" },
-    { heading: "News", link: "/news" },
-    {
-      heading: "Syllabus",
-      link: "/syllabus",
-    },
-    {
-      heading: "Question Model",
-      link: "/questionmodel",
-    },
-    {
-      heading: "Notes",
-
-      subheading: [
-        { label: "BBS first year", link: "/notes/bbsfirstyear" },
-        { label: "BBS second year", link: "/notes/bbssecondyear" },
-        { label: "BBS third year", link: "/notes/bbsthirdyear" },
-        { label: "BBS fourth year", link: "/notes/bbsfourthyear" },
-      ],
-    },
-    { heading: "About Us", link: "/aboutus" },
-  ];
-
-  //nav pop state
-  // const [navpop, setNavpop] = useState(false);
-  const navpop = useStoreData((state) => state.navigationpop);
-  const setNavpop = useStoreData((state) => state.setNavigationpop);
+  const navpop = useStoreData((state: storedata) => state.navigationpop);
+  const setNavpop = useStoreData((state: storedata) => state.setNavigationpop);
   const navigate = useNavigate();
 
   return (
@@ -56,9 +29,7 @@ const Navbar = () => {
           onClick={() => navigate("/")}
         />
       </section>
-      <div className="z-[1] pt-[5rem]">
-        <img src={smbanner} alt="logos " />
-      </div>
+
       {/* nav bar vertical */}
       {navpop ? (
         <div className="w-[272px] fixed left-0 h-screen z-50  top-0 bg-white shadow-sm shadow-gray-400 overflow-auto ">
@@ -83,46 +54,9 @@ const Navbar = () => {
             />
           </div>
           <section className="flex  flex-col  ">
-            {Navdata.map((value, id) => (
+            {Navdata.map((value: navfull, id: number) => (
               <>
-                {/* <div
-                  onClick={() => {
-                    {
-                      value.subheading
-                        ? null
-                        : (navigate(`${value.link}`), setNavpop(false));
-                    }
-                  }}
-                  className="font-bold relative flex items-center justify-between text-lg  text-[#1F9CEE] p-5"
-                >
-                  {value.heading} */}
-
-                {/* {value.subheading ? (
-                    <RiArrowDropDownLine
-                      className="w-9 h-9"
-                      onClick={() => {
-                        setSylpop(!sylpop);
-                      }}
-                    />
-                  ) : null} */}
-                {/* </div> */}
-                <SubHeading value={value} id={id} />
-
-                {/* {ids == id && sylpop ? (
-                  <div className="flex flex-col">
-                    {value.subheading?.map((subvalue) => (
-                      <>
-                        <div
-                          key={id}
-                          className="p-5 ml-5 font-medium text-lg text-[#1F9CEE]"
-                        >
-                          {subvalue}
-                        </div>
-                        <div className="h-px w-[230px] ml-10 bg-gray-200" />
-                      </>
-                    ))}
-                  </div>
-                ) : null} */}
+                <SubHeading value={value} />
               </>
             ))}
           </section>

@@ -1,5 +1,5 @@
 import { create } from "zustand";
-interface storedata {
+export interface storedata {
   navigationpop: boolean;
   setNavigationpop(data: boolean): void;
 }

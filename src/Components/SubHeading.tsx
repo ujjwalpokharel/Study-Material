@@ -2,10 +2,17 @@ import React, { useState } from "react";
 import { RiArrowDropDownLine } from "react-icons/ri";
 import { useNavigate } from "react-router";
 import useStoreData from "../store/Store";
+import { storedata } from "../store/Store";
+import { navfull } from "../Data/Navdata";
+import { subheading } from "../Data/Navdata";
+// interface SubheadingProps {
+//   value: navfull;
+// }
+// : React.FC<subheading>
 
-const SubHeading = ({ value }: any, { id }: any) => {
-  const navpop = useStoreData((state) => state.navigationpop);
-  const setNavpop = useStoreData((state) => state.setNavigationpop);
+const SubHeading = ({ value }: any) => {
+  const navpop = useStoreData((state: storedata) => state.navigationpop);
+  const setNavpop = useStoreData((state: storedata) => state.setNavigationpop);
   const navigate = useNavigate();
   const [drowdown, setDropdown] = useState(false);
   return (
@@ -33,7 +40,7 @@ const SubHeading = ({ value }: any, { id }: any) => {
       <div className="h-px w-[240px] ml-5 bg-gray-200" />
       {drowdown ? (
         <div className="flex flex-col">
-          {value.subheading?.map((subvalue: any) => (
+          {value.subheading?.map((subvalue: subheading) => (
             <>
               <div
                 className="p-5 ml-5 font-medium text-lg text-[#1F9CEE]"

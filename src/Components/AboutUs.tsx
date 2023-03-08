@@ -2,7 +2,7 @@ import React from "react";
 
 const AboutUs = () => {
   return (
-    <div className="m-10 p-6 text-lg  ">
+    <div className="pt-[5rem] p-6 text-lg  ">
       <h1 className="font-bold">Who we are:</h1>
       <p className="">
         We are a team of dedicated educators and professionals who are committed
