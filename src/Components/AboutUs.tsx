@@ -1,5 +1,6 @@
 import React from "react";
 import aboutustemplate from "../assets/AboutTemplate.png";
+import smyoutube from "../assets/smyoutube.jpg";
 
 const AboutUs = () => {
   return (
@@ -18,7 +19,9 @@ const AboutUs = () => {
         <a
           href="https://www.youtube.com/@Studymaterialbypraju"
           target={"_blank"}
-        ></a>
+        >
+          <img src={smyoutube} alt="youtube image" />{" "}
+        </a>
         <p className="pt-3 text-lg">
           Our YouTube channel where we upload video lectures, tutorials, and
           other informative content related to the BBS course.{" "}
