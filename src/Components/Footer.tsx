@@ -19,14 +19,14 @@ const Footer = () => {
       </section>
       <section className="grid grid-flow-col ">
         <div className="space-y-4 text-center">
-          <h1>About Us</h1>
+          <h1 className="font-bold text-[#1F9CEE]">About Us</h1>
           <p>Vision</p>
           <p>Our Team</p>
           <p>Youtube channel</p>
         </div>
 
         <div className="space-y-4 text-center">
-          <h1>Resources</h1>
+          <h1 className="font-bold text-[#1F9CEE]">Resources</h1>
           <p>News</p>
           <p>Syllabus</p>
           <p>Question Models</p>
@@ -34,10 +34,10 @@ const Footer = () => {
         </div>
 
         <div className="space-y-4 text-center">
-          <h1>Contact</h1>
-          <p>phone</p>
-          <p>email</p>
-          <p>address</p>
+          <h1 className="font-bold text-[#1F9CEE]">Contact</h1>
+          <p>+9779862299036</p>
+          <p>ujjwalppokharel@gmail.com</p>
+          <p>Ghathaghar,Bhaktapur</p>
         </div>
       </section>
     </div>
