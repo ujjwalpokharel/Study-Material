@@ -36,13 +36,13 @@ const Syllabus = () => {
       </p>
       <section className="p-10">
         {SyllabusData.map((value) => (
-          <div className="bg-gray-100w-[85vw] mb-8  rounded-md shadow-md overflow-hidden">
+          <div className="bg-gray-100 w-[70vw] h-[400px] mb-8  rounded-md shadow-md ">
             <img
               src={value.img}
               alt="logo"
-              className="h-[150px] w-full object-cover"
+              className=" w-full h-[250px] aspect-video  "
             />
-            <p className="text-lg">{value.description}</p>
+            <p className="text-lg p-6">{value.description}</p>
           </div>
         ))}
       </section>
