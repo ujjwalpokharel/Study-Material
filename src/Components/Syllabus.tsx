@@ -6,17 +6,21 @@ const SyllabusData = [
   {
     img: bbs1stnew,
     description:
-      "bbsnewcourse cardThe Bachelor of Business Studies (BBS) program is a four-yearundergrad",
+      "bbsnewcourse cardThe Bachelor of Business Studies (BBS) program is a four-yearundergrad i need content to put in it",
   },
-  {
-    img: bbs1stold,
-    description: "bbs old course card",
-  },
+  // {
+  //   img: bbs1stold,
+  //   description: "bbs old course card",
+  // },
 ];
 const Syllabus = () => {
   return (
     <div className="pt-[5rem]">
-      <img src={syllabusbanner} alt="syllabusbanner" className="w-screen" />
+      <img
+        src={syllabusbanner}
+        alt="syllabusbanner"
+        className="w-screen object-contain"
+      />
       <p className="p-5">
         The Bachelor of Business Studies (BBS) program is a four-year
         undergraduate degree that covers a wide range of business and management
@@ -32,9 +36,13 @@ const Syllabus = () => {
       </p>
       <section>
         {SyllabusData.map((value) => (
-          <div className="w-80 h-80 m-3 p-10 border-[4px] border-blue-900">
-            <img src={value.img} alt="logo" className=" h-40 " />
-            {value.description}
+          <div className=" w-[80vw] h-[400px] m-7  shadow-sm shadow-slate-400">
+            <img
+              src={value.img}
+              alt="logo"
+              className="w-[80vw] h-[250px] p-5"
+            />
+            <p className="p-5 text-lg">{value.description}</p>
           </div>
         ))}
       </section>
