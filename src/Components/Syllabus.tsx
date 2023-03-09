@@ -2,15 +2,19 @@ import React from "react";
 import bbs1stold from "../assets/syllabusimage/bbs1styearoldcourse.png";
 import bbs1stnew from "../assets/syllabusimage/bbs1styearnewcourse.png";
 import syllabusbanner from "../assets/syllabusimage/syllabusbanner.png";
+import Footer from "./Footer";
 const SyllabusData = [
   {
     img: bbs1stnew,
-    description:
-      "bbsnewcourse cardThe Bachelor of Business Studies (BBS) program is a four-yearundergrad i need content to put in it",
   },
   {
     img: bbs1stold,
-    description: "bbs old course card",
+  },
+  {
+    img: bbs1stold,
+  },
+  {
+    img: bbs1stold,
   },
 ];
 const Syllabus = () => {
@@ -36,16 +40,16 @@ const Syllabus = () => {
       </p>
       <section className="flex flex-col items-center justify-center">
         {SyllabusData.map((value) => (
-          <div className="bg-gray-100 w-[80vw] h-[400px] mb-8  rounded-md shadow-md ">
+          <div className="bg-gray-100 w-[80vw]  h-[250px] hover: transform hover:scale-110 transition mb-8  rounded-md shadow-lg">
             <img
               src={value.img}
               alt="logo"
-              className=" w-full h-[280px] aspect-video  "
+              className=" w-full h-full aspect-video  "
             />
-            <p className="text-lg p-6">{value.description}</p>
           </div>
         ))}
       </section>
+      <Footer />
     </div>
   );
 };
