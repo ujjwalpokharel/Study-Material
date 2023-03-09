@@ -8,10 +8,10 @@ const SyllabusData = [
     description:
       "bbsnewcourse cardThe Bachelor of Business Studies (BBS) program is a four-yearundergrad i need content to put in it",
   },
-  // {
-  //   img: bbs1stold,
-  //   description: "bbs old course card",
-  // },
+  {
+    img: bbs1stold,
+    description: "bbs old course card",
+  },
 ];
 const Syllabus = () => {
   return (
@@ -34,11 +34,15 @@ const Syllabus = () => {
         a chosen concentration area and take courses in entrepreneurship, three
         concentrations, research methods, and complete a final project.
       </p>
-      <section>
+      <section className="p-10">
         {SyllabusData.map((value) => (
-          <div className=" w-[80vw] h-[400px] m-7  shadow-sm shadow-slate-400">
-            <img src={value.img} alt="logo" className="w-[80vw] h-[300px] " />
-            <p className="p-5 text-lg">{value.description}</p>
+          <div className="bg-gray-100w-[85vw] mb-8  rounded-md shadow-md overflow-hidden">
+            <img
+              src={value.img}
+              alt="logo"
+              className="h-[150px] w-full object-cover"
+            />
+            <p className="text-lg">{value.description}</p>
           </div>
         ))}
       </section>
