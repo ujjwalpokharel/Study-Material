@@ -37,11 +37,7 @@ const Syllabus = () => {
       <section>
         {SyllabusData.map((value) => (
           <div className=" w-[80vw] h-[400px] m-7  shadow-sm shadow-slate-400">
-            <img
-              src={value.img}
-              alt="logo"
-              className="w-[80vw] h-[250px] p-5"
-            />
+            <img src={value.img} alt="logo" className="w-[80vw] h-[300px] " />
             <p className="p-5 text-lg">{value.description}</p>
           </div>
         ))}
