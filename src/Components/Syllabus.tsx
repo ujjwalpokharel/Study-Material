@@ -34,13 +34,13 @@ const Syllabus = () => {
         a chosen concentration area and take courses in entrepreneurship, three
         concentrations, research methods, and complete a final project.
       </p>
-      <section className="p-10">
+      <section className="flex flex-col items-center justify-center">
         {SyllabusData.map((value) => (
-          <div className="bg-gray-100 w-[70vw] h-[400px] mb-8  rounded-md shadow-md ">
+          <div className="bg-gray-100 w-[80vw] h-[400px] mb-8  rounded-md shadow-md ">
             <img
               src={value.img}
               alt="logo"
-              className=" w-full h-[250px] aspect-video  "
+              className=" w-full h-[280px] aspect-video  "
             />
             <p className="text-lg p-6">{value.description}</p>
           </div>
