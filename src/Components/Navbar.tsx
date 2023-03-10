@@ -32,7 +32,7 @@ const Navbar = () => {
 
       {/* nav bar vertical */}
       {navpop ? (
-        <div className="w-[272px] fixed left-0 h-screen z-50  top-0 bg-white shadow-sm shadow-gray-400 overflow-auto ">
+        <div className="w-[272px] fixed left-0 h-screen   top-0 bg-white shadow-sm shadow-gray-400 overflow-auto ">
           {/* logo */}
           <div className="items-center flex justify-center">
             <img
@@ -60,6 +60,9 @@ const Navbar = () => {
               </>
             ))}
           </section>
+          <p className="absolute bottom-0 left-11 text-[#1F9CEE]">
+            @StudyMaterial
+          </p>
         </div>
       ) : null}
     </>
